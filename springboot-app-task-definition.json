@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:eu-north-1:974142680250:task-definition/springboot-app-task-definition:6",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:675150598341:task-definition/springboot-app-task-definition:1",
     "containerDefinitions": [
         {
-            "name": "springboot-example",
-            "image": "974142680250.dkr.ecr.eu-north-1.amazonaws.com/springboot-example:latest",
+            "name": "springboot-app",
+            "image": "675150598341.dkr.ecr.us-east-1.amazonaws.com/springboot-service:latest",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "springboot-example-8080-tcp",
+                    "name": "springboot-app-8080-tcp",
                     "containerPort": 8080,
                     "hostPort": 8080,
                     "protocol": "tcp",
@@ -25,7 +25,7 @@
                 "options": {
                     "awslogs-create-group": "true",
                     "awslogs-group": "/ecs/springboot-app-task-definition",
-                    "awslogs-region": "eu-north-1",
+                    "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 },
                 "secretOptions": []
@@ -33,10 +33,9 @@
         }
     ],
     "family": "springboot-app-task-definition",
-    "taskRoleArn": "arn:aws:iam::974142680250:role/ecsTaskExecutionRole",
-    "executionRoleArn": "arn:aws:iam::974142680250:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::675150598341:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 6,
+    "revision": 1,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -51,9 +50,6 @@
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.task-iam-role"
         },
         {
             "name": "ecs.capability.execution-role-ecr-pull"
@@ -82,7 +78,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-12-08T19:03:51.274Z",
-    "registeredBy": "arn:aws:iam::974142680250:user/integration-ninjas",
+    "registeredAt": "2023-12-28T21:47:45.660Z",
+    "registeredBy": "arn:aws:iam::675150598341:user/dnyaga",
     "tags": []
 }
